@@ -1,4 +1,4 @@
-# Project PasterPack
+# Project PasterPack （未定名）
 
 一个用于持续开发与维护的 Minecraft 魔改整合包仓库。
 
