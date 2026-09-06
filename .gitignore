@@ -1,0 +1,39 @@
+# Minecraft runtime data and local state
+/.cache/
+/.neko_probe/
+/.vscode/
+/cache/
+/crash-reports/
+/downloads/
+/local/
+/logs/
+/PCL/
+/Project PasterPack-natives/
+/resourcepacks/
+/saves/
+/shaderpacks/
+/xaero/
+/XaeroWaypoints_BACKUP240807/
+
+# Launcher and per-player files
+/Project PasterPack.jar
+/Project PasterPack.json
+/command_history.txt
+/emi.json
+/options.txt
+/realms_persistence.json
+/usercache.json
+/usernamecache.json
+
+# JavaScript dependencies and generated data
+/nekojs/node_modules/
+/nekojs/data/
+
+# Secrets and OS metadata
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+Thumbs.db
+Desktop.ini

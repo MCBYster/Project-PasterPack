@@ -1,0 +1,86 @@
+#Energy Generator Settings
+[Energy]
+
+	[Energy.FE]
+		#Control the minimum rate of production.
+		# Default: 1
+		# Range: 1 ~ 9223372036854775807
+		min = 1
+		#Control the maximum rate of production.
+		# Default: 9223372036854775807
+		# Range: 1 ~ 9223372036854775807
+		max = 9223372036854775807
+		#Control the number of seconds it takes to increase production each time.
+		# Default: 1
+		# Range: 1 ~ 9223372036854775807
+		second = 1
+		#Control the numerical increase in production each time.
+		# Default: 1
+		# Range: 0 ~ 9223372036854775807
+		step = 1
+		#The item that boosts the growth rate. When placed in the boost slot, each increase becomes 1% of the current output. Use item registry name, e.g. minecraft:nether_star.
+		star_item = "minecraft:nether_star"
+		#Bypass the energy capacity/receive limits of third-party machines (e.g. Mekanism, Thermal, Draconic Evolution) by directly refilling their internal energy to full when they reject the FE. Default: true.
+		bypass_enabled = true
+
+#Liquid Generator Settings
+[Liquid]
+
+	[Liquid.Water]
+		#Control the minimum rate of production.The actual data needs to be divided by 1000.
+		# Default: 50
+		# Range: 1 ~ 9223372036854775807
+		min = 50
+		#Control the maximum rate of production.The actual data needs to be divided by 1000.
+		# Default: 9223372036854775807
+		# Range: 1 ~ 9223372036854775807
+		max = 9223372036854775807
+		#Control the number of seconds it takes to increase production each time.
+		# Default: 10
+		# Range: 1 ~ 9223372036854775807
+		second = 10
+		#Control the numerical increase in production each time.The actual data needs to be divided by 1000.
+		# Default: 50
+		# Range: 0 ~ 9223372036854775807
+		step = 50
+
+	[Liquid.Lava]
+		#Control the minimum rate of production.The actual data needs to be divided by 1000.
+		# Default: 50
+		# Range: 1 ~ 9223372036854775807
+		min = 50
+		#Control the maximum rate of production.The actual data needs to be divided by 1000.
+		# Default: 9223372036854775807
+		# Range: 1 ~ 9223372036854775807
+		max = 9223372036854775807
+		#Control the number of seconds it takes to increase production each time.
+		# Default: 10
+		# Range: 1 ~ 9223372036854775807
+		second = 10
+		#Control the numerical increase in production each time.The actual data needs to be divided by 1000.
+		# Default: 50
+		# Range: 0 ~ 9223372036854775807
+		step = 50
+
+#Block Generator Settings
+[Block]
+
+	[Block.Generator]
+		#Control the minimum rate of production.The actual data needs to be divided by 1000.
+		# Default: 50
+		# Range: 1 ~ 9223372036854775807
+		min = 50
+		#Control the maximum rate of production.The actual data needs to be divided by 1000.
+		# Default: 9223372036854775807
+		# Range: 1 ~ 9223372036854775807
+		max = 9223372036854775807
+		#Control the number of seconds it takes to increase production each time.
+		# Default: 10
+		# Range: 1 ~ 9223372036854775807
+		second = 10
+		#Control the numerical increase in production each time.The actual data needs to be divided by 1000.
+		# Default: 50
+		# Range: 0 ~ 9223372036854775807
+		step = 50
+		#List of items (registry names like minecraft:dirt) or item tags (prefixed with # like #minecraft:stone_bricks) that the block generator can produce. The marker slot accepts items matching any entry.
+		items = ["minecraft:stone", "minecraft:deepslate", "minecraft:dirt", "minecraft:sand", "minecraft:gravel", "minecraft:cobblestone", "minecraft:andesite", "minecraft:granite", "minecraft:diorite", "minecraft:tuff", "minecraft:cobbled_deepslate", "minecraft:clay", "minecraft:red_sand", "minecraft:moss_block", "minecraft:rooted_dirt", "minecraft:mud", "minecraft:dripstone_block", "minecraft:calcite", "minecraft:amethyst_block", "minecraft:obsidian", "minecraft:prismarine", "minecraft:bricks", "minecraft:smooth_stone", "#minecraft:stone_bricks", "minecraft:mossy_cobblestone", "minecraft:sandstone", "minecraft:smooth_sandstone", "minecraft:red_sandstone", "minecraft:polished_andesite", "minecraft:polished_granite", "minecraft:polished_diorite", "minecraft:polished_deepslate", "minecraft:deepslate_bricks", "minecraft:mud_bricks", "minecraft:netherrack", "minecraft:basalt", "minecraft:smooth_basalt", "minecraft:soul_sand", "minecraft:soul_soil", "minecraft:blackstone", "minecraft:polished_blackstone_bricks", "minecraft:polished_blackstone", "minecraft:nether_bricks", "minecraft:magma_block", "minecraft:end_stone", "minecraft:end_stone_bricks"]

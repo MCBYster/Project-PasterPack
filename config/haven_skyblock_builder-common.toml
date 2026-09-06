@@ -1,0 +1,115 @@
+#Message Prefix
+[message_prefix]
+	#Prefix shown before Haven Skyblock Builder chat messages. Color codes are supported.
+	message_prefix = "§6[§5Haven §2Skyblock §3Builder§6]§r "
+
+#Island Creation Height
+[island_creation_height]
+	#The height at which islands will be created
+	# Default: 70
+	# Range: > 1
+	island_creation_height = 70
+
+#Enable Nether Skyblock
+[enable_nether_skyblock]
+	#If false, it will generate regular nether.
+	enable_nether_skyblock = true
+
+#Keep Inventory on Island Leave
+[keep_inventory_on_island_leave]
+	#If true, players will keep their inventory when leaving the island.
+	keep_inventory_on_island_leave = true
+
+#Remove Disbanded Teams
+[remove_disbanded_teams]
+	#If true, disbanded team files are removed completely.
+	remove_disbanded_teams = true
+
+#Island-Specific Spawn Offsets
+[island_specific_offsets]
+	#The spawn offsets and look direction for specific islands.
+	#Format: "islandName=x,y,z,lookDirection".
+	#Example: [
+	#  "classic_island=0,1,0,90",  // Look east
+	#  "jungle_island=5,1,-3,180" // Look south
+	#]
+	#
+	island_specific_offsets = ["classic_island=1,1,-3,-90"]
+
+#Island Distance
+[island_distance]
+	#The distance between each island
+	# Default: 8192
+	# Range: > 1
+	island_distance = 8192
+
+#World Spawn Position
+[spawn_position]
+	#The X, Y, Z coordinates of the world spawn position.
+	#Example: ["0", "71", "0"] (Default spawn at 0, 70, 0).
+	#
+	spawn_position = ["0", "70", "0"]
+
+#Additional Structures
+[additional_structures]
+	#Additional structures to spawn for each island template.
+	#Format: "islandTemplate=structureName,xOffset,yOffset,zOffset".
+	#Examples:
+	#  - None: []
+	#  - One: ["classic_island=additional_sand_island,0,0,-75"]
+	#  - Two: [
+	#      "classic_island=additional_sand_island,0,0,-75",
+	#      "classic_island=additional_jungle_island,0,0,75"
+	#    ]
+	#
+	additional_structures = ["classic_island=additional_sand_island,0,0,-75"]
+
+#Cooldowns
+[cooldowns]
+	#Cooldown time (in seconds) for using the '/havensb island home' command.
+	# Default: 15
+	# Range: > 0
+	home_cooldown = 15
+	#Cooldown time (in seconds) for using the '/havensb spawn' command.
+	# Default: 5
+	# Range: > 0
+	spawn_cooldown = 5
+	#Cooldown time (in seconds) for creating a new island.
+	# Default: 30
+	# Range: > 0
+	create_cooldown = 30
+	#Cooldown time (in seconds) for visiting another team's island.
+	# Default: 10
+	# Range: > 0
+	visit_cooldown = 10
+
+#Blacklist Biomes for Islands
+[blacklist_biomes_for_islands]
+	#Biomes that are blacklisted for island generation.
+	blacklist_biomes_for_islands = ["minecraft:ocean", "minecraft:deep_ocean", "minecraft:warm_ocean", "minecraft:lukewarm_ocean", "minecraft:deep_lukewarm_ocean", "minecraft:cold_ocean", "minecraft:deep_cold_ocean", "minecraft:frozen_ocean", "minecraft:deep_frozen_ocean", "minecraft:jagged_peaks", "minecraft:frozen_peaks", "minecraft:grove", "minecraft:snowy_slopes", "minecraft:windswept_hills", "minecraft:frozen_river", "minecraft:snowy_beach", "minecraft:snowy_plains", "minecraft:ice_spikes", "minecraft:badlands", "minecraft:eroded_badlands"]
+
+#Overworld Layer Configuration
+[overworld_layer_config]
+	#Defines the block layers for the Overworld (can be empty), max 384 layers, format: block1,count*block2,block3
+	overworld_layer_config = ""
+
+#Nether Layer Configuration
+[nether_layer_config]
+	#Defines the block layers for the Nether (can be empty), max 256 layers, format: block1,count*block2,block3
+	nether_layer_config = "minecraft:bedrock,50*minecraft:lava"
+
+#World Structures
+[world_structures]
+	#Defines structures allowed in skyblock generation.
+	#
+	world_structures = []
+
+#World Carvers
+[world_carvers]
+	#Defines the carvers for Overworld and Nether, format: "minecraft:carver1", "minecraft:carver2"
+	world_carvers = []
+
+#World Placed Features
+[world_placed_features]
+	#Defines the placed features for Overworld and Nether, format: "minecraft:feature1", "minecraft:feature2"
+	world_placed_features = []

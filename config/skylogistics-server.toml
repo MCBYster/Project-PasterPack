@@ -1,0 +1,306 @@
+[vaults]
+	#Maximum item/fluid type slots a Celestial Vault can be expanded to with capacity nectar.
+	#使用容量甘露扩容后，天穹仓库可拥有的最大物品/流体类型槽位数。
+	# Default: 36
+	# Range: 1 ~ 63
+	maxVaultTypes = 36
+	#Maximum serialized NBT bytes allowed for one distinct item stored in an item vault.
+	#物品库中单种物品允许的最大序列化 NBT 字节数。
+	# Default: 8192
+	# Range: 128 ~ 1048576
+	maxVaultItemEntryNbtBytes = 8192
+	#Maximum serialized NBT bytes allowed for one distinct fluid stored in a fluid vault.
+	#流体库中单种流体允许的最大序列化 NBT 字节数。
+	# Default: 4096
+	# Range: 128 ~ 1048576
+	maxVaultFluidEntryNbtBytes = 4096
+
+[transfers]
+	#Maximum item count moved by a logistics node per normal item transfer operation.
+	#物流节点每次普通物品传输操作可搬运的最大物品数量。
+	# Default: 2147483647
+	# Range: > 1
+	nodeItemTransferLimit = 2147483647
+	#Maximum energy moved by a logistics node per energy transfer operation.
+	#物流节点每次能量传输操作可搬运的最大能量。
+	# Default: 2147483647
+	# Range: > 1
+	nodeEnergyTransferLimit = 2147483647
+	#Maximum speed upgrade cards that stack in one node upgrade slot. Each card adds one scanned slot per tick to the base rate of one. It is recommended to set preferredItemSlotCacheSize to at least this value plus one.
+	#单个节点升级槽内可堆叠的速度升级卡上限；基础速率为每 tick 1 槽，每张卡额外增加 1 槽。建议 preferredItemSlotCacheSize 的配置值至少为此升级数加 1。
+	# Default: 8
+	# Range: 1 ~ 64
+	maxSpeedUpgradesPerNode = 8
+	#Maximum amount moved per direct transfer operation between Sky Logistics vault containers.
+	#天穹物流仓库容器之间每次直接传输操作可搬运的最大数量。
+	# Default: 9223372036854775807
+	# Range: 1 ~ 9223372036854775807
+	skyContainerTransferLimit = 9223372036854775807
+	#Maximum item slot keep limit configurable on a logistics face. Face value 0 still means unlimited.
+	#物流面的物品留槽限制可配置的最大值；面配置值 0 仍表示无限制。
+	# Default: 36
+	# Range: 1 ~ 999
+	maxItemSlotLimit = 36
+
+	[transfers.astages]
+		#Whether AStages player stages limit and unlock per-operation transfer amounts. Requires AStages 2.x.
+		#是否由 AStages 玩家阶段限制并解锁单次操作传输量。需要 AStages 2.x。
+		enabled = false
+		#AStages unlock entries. Each entry requires stage and may define any of: items, fluids, chemicals, energy, mana, source.
+		#AStages 解锁条目。每项必须包含 stage，并可定义 items、fluids、chemicals、energy、mana、source 中的任意字段。
+		#Example / 示例: [{ stage = "logistics_tier_1", items = 128, fluids = 20000 }]
+		stageRates = []
+
+		[transfers.astages.initialRates]
+			# Default: 64
+			# Range: 1 ~ 9223372036854775807
+			items = 64
+			# Default: 10000
+			# Range: 1 ~ 9223372036854775807
+			fluids = 10000
+			# Default: 10000
+			# Range: 1 ~ 9223372036854775807
+			chemicals = 10000
+			# Default: 100000
+			# Range: 1 ~ 9223372036854775807
+			energy = 100000
+			# Default: 100000
+			# Range: 1 ~ 9223372036854775807
+			mana = 100000
+			# Default: 100000
+			# Range: 1 ~ 9223372036854775807
+			source = 100000
+
+	#Simple pipe enable switches, transfer rates, and connection limits.
+	#简易管道的启用开关、传输速率与连接上限。
+	[transfers.simplePipes]
+		#Whether simple item pipes connect to inventories and transfer items.
+		#简易物品管道是否连接物品容器并传输物品。
+		enableSimpleItemPipe = true
+		#Whether simple fluid pipes connect to tanks and transfer fluids.
+		#简易流体管道是否连接储罐并传输流体。
+		enableSimpleFluidPipe = true
+		#Whether simple energy pipes connect to FE storages and transfer energy.
+		#简易能量管道是否连接 FE 储能设备并传输能量。
+		enableSimpleEnergyPipe = true
+		#Maximum items moved by each extracting simple item pipe per tick. A transfer still uses at most one source slot and one target slot.
+		#每个抽取型简易物品管道每 tick 最多搬运的物品数；一次传输仍最多使用一个来源槽和一个目标槽。
+		# Default: 64
+		# Range: > 1
+		simpleItemPipeTransferRate = 64
+		#Maximum fluid amount in mB moved by each extracting simple fluid pipe per tick.
+		#每个抽取型简易流体管道每 tick 最多搬运的流体量（mB）。
+		# Default: 10000
+		# Range: > 1
+		simpleFluidPipeTransferRate = 10000
+		#Maximum FE moved by each extracting simple energy pipe per tick.
+		#每个抽取型简易能量管道每 tick 最多搬运的 FE。
+		# Default: 100000
+		# Range: > 1
+		simpleEnergyPipeTransferRate = 100000
+		#Maximum Mekanism chemical amount moved by each extracting simple fluid pipe per tick.
+		#每个抽取型简易流体管道每 tick 最多搬运的 Mekanism 化学品数量。
+		# Default: 10000
+		# Range: > 1
+		simpleChemicalPipeTransferRate = 10000
+		#Maximum Botania mana moved by each extracting simple energy pipe per tick.
+		#每个抽取型简易能量管道每 tick 最多搬运的 Botania 魔力。
+		# Default: 50
+		# Range: > 1
+		simpleManaPipeTransferRate = 50
+		#Maximum Ars Nouveau source moved by each extracting simple energy pipe per tick.
+		#每个抽取型简易能量管道每 tick 最多搬运的 Ars Nouveau 源质。
+		# Default: 50
+		# Range: > 1
+		simpleSourcePipeTransferRate = 50
+		#Whether new simple pipe connections are rejected when they would exceed simplePipeMaxConnectedBlocks.
+		#新建简易管道连接超过 simplePipeMaxConnectedBlocks 时，是否拒绝该连接。
+		enforceSimplePipeConnectionLimit = true
+		#Maximum connected blocks in one simple pipe line. New pipe edges that would exceed this limit stay disconnected.
+		#单条简易管道线路允许连接的最大方块数；超过上限的新连接会保持断开。
+		# Default: 1024
+		# Range: 16 ~ 65536
+		simplePipeMaxConnectedBlocks = 1024
+
+	#Transfer operation budgets and scan attempt limits.
+	#传输操作预算与扫描尝试上限。
+	[transfers.performance]
+		#Maximum endpoint, slot, tank, and energy transfer operations Sky Logistics may process per server tick.
+		#天穹物流每个服务器 tick 可处理的端点、槽位、储罐和能量传输操作总上限。
+		# Default: 32768
+		# Range: 1 ~ 1000000
+		serverOpsPerTick = 32768
+		#Maximum endpoint, slot, tank, and energy transfer operations one logistics line may consume per server tick.
+		#单条物流线路每个服务器 tick 可消耗的端点、槽位、储罐和能量传输操作上限。
+		# Default: 1024
+		# Range: 1 ~ 1000000
+		lineOpsPerTick = 1024
+		#Maximum receiving endpoints one source endpoint may try after failures for one transfer candidate. A successful transfer still stops immediately.
+		#一个来源端点针对单个传输候选在失败后最多尝试的接收端点数；成功传输后仍会立即停止。
+		# Default: 4
+		# Range: 1 ~ 1000000
+		endpointTargetAttempts = 4
+		#Maximum external fluid tanks one source endpoint may scan per tick. Node operation rate still applies.
+		#一个来源端点每 tick 最多扫描的外部流体储罐数；仍受节点操作速率限制。
+		# Default: 8
+		# Range: 1 ~ 1000000
+		externalTankScansPerEndpoint = 8
+		#Maximum slot/tank cursor positions one source endpoint may skip while searching for work in one transfer attempt.
+		#一个来源端点在单次传输尝试中寻找可执行工作时最多跳过的槽位/储罐游标位置数。
+		# Default: 64
+		# Range: 1 ~ 1000000
+		sourceSearchAttemptsPerEndpoint = 64
+
+	#Third-party storage and resource transfer integrations.
+	#第三方存储与资源传输联动。
+	[transfers.integrations]
+		#Whether Sky ME Interfaces may transfer items stored in AE2 networks.
+		#天穹 ME 接口是否可传输 AE2 网络中存储的物品。
+		allowAe2ItemTransfer = true
+		#Whether transfers treat a Sophisticated Storage stack-upgraded slot as one transportable slot.
+		#传输时是否将 Sophisticated Storage 堆叠升级后的槽位视为一个可搬运槽位。
+		allowSophisticatedStorageStackUpgradeTransfer = true
+		#Whether Sky ME Interfaces may transfer fluids stored in AE2 networks.
+		#天穹 ME 接口是否可传输 AE2 网络中存储的流体。
+		allowAe2FluidTransfer = true
+		#Whether Sky RS Interfaces may transfer items stored in Refined Storage networks.
+		#天穹 RS 接口是否可传输 Refined Storage 网络中存储的物品。
+		allowRefinedStorageItemTransfer = true
+		#Whether Sky RS Interfaces may transfer fluids stored in Refined Storage networks.
+		#天穹 RS 接口是否可传输 Refined Storage 网络中存储的流体。
+		allowRefinedStorageFluidTransfer = true
+		#Whether fluid-enabled logistics faces may also transfer Mekanism chemicals.
+		#启用流体的物流面是否也可传输 Mekanism 化学品。
+		allowFluidChemicalTransfer = true
+		#Whether energy-enabled logistics faces may also transfer Botania mana.
+		#启用能量的物流面是否也可传输 Botania 魔力。
+		allowEnergyManaTransfer = true
+		#Whether energy-enabled logistics faces may also transfer Ars Nouveau source.
+		#启用能量的物流面是否也可传输 Ars Nouveau 源质。
+		allowEnergySourceTransfer = true
+		#Whether Sky ME Interfaces may transfer AppFlux FE stored in AE2 networks.
+		#天穹 ME 接口是否可传输 AE2 网络中由 AppFlux 存储的 FE。
+		allowAe2AppFluxEnergyTransfer = true
+		#Whether Sky ME Interfaces may transfer Applied Mekanistics chemicals stored in AE2 networks.
+		#天穹 ME 接口是否可传输 AE2 网络中由 Applied Mekanistics 存储的化学品。
+		allowAe2AppliedMekanisticsChemicalTransfer = true
+		#Whether Sky Dimension Interfaces may transfer items stored in Beyond Dimensions networks.
+		#天穹维度接口是否可传输 Beyond Dimensions 网络中存储的物品。
+		allowBeyondDimensionsItemTransfer = true
+		#Whether Sky Dimension Interfaces may transfer fluids stored in Beyond Dimensions networks.
+		#天穹维度接口是否可传输 Beyond Dimensions 网络中存储的流体。
+		allowBeyondDimensionsFluidTransfer = true
+		#Whether Sky Dimension Interfaces may transfer FE stored in Beyond Dimensions networks.
+		#天穹维度接口是否可传输 Beyond Dimensions 网络中存储的 FE。
+		allowBeyondDimensionsEnergyTransfer = true
+		#Whether Sky Dimension Interfaces may transfer Mekanism chemicals stored in Beyond Dimensions networks.
+		#天穹维度接口是否可传输 Beyond Dimensions 网络中存储的 Mekanism 化学品。
+		allowBeyondDimensionsMekanismChemicalTransfer = true
+		#Whether Sky Dimension Interfaces may transfer Ars Nouveau source stored in Beyond Dimensions networks.
+		#天穹维度接口是否可传输 Beyond Dimensions 网络中存储的 Ars Nouveau 源质。
+		allowBeyondDimensionsSourceTransfer = true
+		#Whether Sky ME Interfaces may transfer Applied Botanics mana stored in AE2 networks.
+		#天穹 ME 接口是否可传输 AE2 网络中由 Applied Botanics 存储的魔力。
+		allowAe2AppliedBotanicsManaTransfer = true
+		#Whether Sky ME Interfaces may transfer Ars Energistique source stored in AE2 networks.
+		#天穹 ME 接口是否可传输 AE2 网络中由 Ars Energistique 存储的源质。
+		allowAe2ArsEnergistiqueSourceTransfer = true
+
+		[transfers.integrations.forceExtractionUpgrade]
+			#Device block mod IDs allowed for force extraction. An empty list disables the upgrade; only matching mod devices enable its behavior.
+			#允许强制抽取的设备方块 modID 列表。列表为空时禁用该升级；仅匹配列表中模组的设备会启用其功能。
+			deviceModIdWhitelist = ["mekanism_extras"]
+
+	#Transfer retry delays, cursors, and endpoint caches.
+	#传输重试延迟、游标与端点缓存。
+	[transfers.retryAndCaching]
+		#Number of successful item source slots remembered as hot slots per source endpoint.
+		#每个来源端点记忆为热槽的成功物品来源槽数量。
+		# Default: 9
+		# Range: 1 ~ 256
+		preferredItemSlotCacheSize = 9
+		#Target item insertion cursor lanes per multi-slot endpoint. Single-slot targets bypass cursors; the active count never exceeds the target slot count; 0 disables cursor-based slot ordering.
+		#每个多槽端点的目标物品插入游标通道数。单槽目标绕过游标；实际数量不超过目标槽数；0 表示禁用基于游标的槽位排序。
+		# Default: 9
+		# Range: 0 ~ 64
+		targetItemInsertionCursorCount = 9
+		#Maximum recent item, fluid, or chemical accept-reject records remembered per receiving endpoint.
+		#每个接收端点记忆的近期物品、流体或化学品接受/拒绝记录上限。
+		# Default: 9
+		# Range: 1 ~ 64
+		rejectedAcceptCacheSize = 9
+		#Ticks to wait after the first failed transfer attempt. Shared by sending endpoint failures and receiving endpoint accept-reject retries.
+		#首次传输尝试失败后的等待 tick 数；发送端点失败与接收端点接受/拒绝重试共用。
+		# Default: 5
+		# Range: 1 ~ 1200
+		transferRetryFirstTicks = 5
+		#Ticks to wait after the second consecutive failed transfer attempt.
+		#连续第二次传输尝试失败后的等待 tick 数。
+		# Default: 10
+		# Range: 1 ~ 1200
+		transferRetrySecondTicks = 10
+		#Ticks to wait after the third consecutive failed transfer attempt.
+		#连续第三次传输尝试失败后的等待 tick 数。
+		# Default: 20
+		# Range: 1 ~ 1200
+		transferRetryThirdTicks = 20
+		#Ticks to wait after the fourth and later consecutive failed transfer attempts.
+		#连续第四次及后续传输尝试失败后的等待 tick 数。
+		# Default: 40
+		# Range: 1 ~ 1200
+		transferRetryMaxTicks = 40
+
+[distributor]
+	#Whether Celestial Distributors proxy item storage.
+	#天穹分配器是否代理物品存储。
+	enableItems = true
+	#Whether Celestial Distributors proxy fluid storage.
+	#天穹分配器是否代理流体存储。
+	enableFluids = true
+	#Whether Celestial Distributors proxy energy storage.
+	#天穹分配器是否代理能量存储。
+	enableEnergy = true
+	#Maximum adjacent container targets discovered by one Celestial Distributor. Higher values increase scan and proxy costs.
+	#单个天穹分配器最多发现的相邻容器目标数；数值越高，扫描和代理开销越大。
+	# Default: 16
+	# Range: 1 ~ 64
+	maxTargets = 16
+	#Maximum BFS positions one Celestial Distributor may inspect per server tick. This budget is independent from transfer operations.
+	#单个天穹分配器每个服务器 tick 最多检查的 BFS 位置数；该预算独立于传输操作。
+	# Default: 16
+	# Range: 1 ~ 4096
+	scanOpsPerTick = 16
+	#Maximum transfer probes one Celestial Distributor may perform per server tick. Each directly accessed item slot, tank, or resource target costs one probe; item insertion combines a target and its first slot. BFS discovery uses scanOpsPerTick instead.
+	#单个天穹分配器每个服务器 tick 最多执行的传输探测数。每个直接访问的物品槽、储罐或资源目标消耗一次；物品插入将目标及其首槽合并计数。BFS 发现改用 scanOpsPerTick。
+	# Default: 64
+	# Range: 1 ~ 4096
+	opsPerTick = 64
+
+[necklaces]
+	#Server ticks between Sky Necklace work scans. Higher values reduce player inventory and backpack scanning frequency.
+	#天穹项链两次工作扫描之间的服务器 tick 数；数值越高，扫描玩家背包和附属背包的频率越低。
+	# Default: 10
+	# Range: 1 ~ 1200
+	skyNecklaceTickInterval = 10
+	#Maximum inventory, backpack, or network item slots one Sky Necklace may scan each work tick.
+	#一条天穹项链每次工作最多扫描的物品栏、背包或网络物品槽数量。
+	# Default: 64
+	# Range: 1 ~ 1000000
+	skyNecklaceSlotScansPerTick = 64
+	#Maximum logistics endpoints one Sky Necklace may visit during one work interval (outputs while extracting, inputs while inserting).
+	#一条天穹项链每次工作最多访问的物流端点数（抽取时访问输出端，插入时访问输入端）。
+	# Default: 1
+	# Range: 1 ~ 1000000
+	skyNecklaceTargetAttemptsPerWork = 1
+
+[rituals]
+	#Minimum block Y for Eulogia Crystals to charge and sky offering altars to work.
+	#尤洛伽水晶充能及天穹供奉祭坛工作的最低方块 Y 坐标。
+	# Default: 128
+	# Range: -64 ~ 320
+	skyRitualMinY = 128
+	#Seconds an uncharged Eulogia Crystal must spend at or above skyRitualMinY before it becomes charged. One second is 20 ticks.
+	#未充能尤洛伽水晶在 skyRitualMinY 或更高处完成充能所需的秒数；1 秒为 20 tick。
+	# Default: 20
+	# Range: 1 ~ 3600
+	eulogiaCrystalChargeSeconds = 20
