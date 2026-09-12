@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "exdeorum:stone_pebble" },
+        { "type": "minecraft:item", "name": "exdeorum:diorite_pebble" },
+        { "type": "minecraft:item", "name": "exdeorum:granite_pebble" },
+        { "type": "minecraft:item", "name": "exdeorum:andesite_pebble" },
+        { "type": "minecraft:item", "name": "exdeorum:deepslate_pebble" },
+        { "type": "minecraft:item", "name": "exdeorum:tuff_pebble" },
+        { "type": "minecraft:item", "name": "exdeorum:calcite_pebble" },
+        { "type": "minecraft:item", "name": "exdeorum:blackstone_pebble" },
+        { "type": "minecraft:item", "name": "exdeorum:basalt_pebble" }
+      ]
+    }
+  ]
+}
