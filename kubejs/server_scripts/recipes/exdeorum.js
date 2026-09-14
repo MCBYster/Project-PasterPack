@@ -1,4 +1,7 @@
 ServerEvents.recipes(event => {
+    event.remove({ id:'exdeorum:warped_crucible'})
+    event.remove({ id:'exdeorum:crimson_crucible'})
+//深板岩 黑石有筛配方，凝灰岩 方解石 玄武岩可以添加配方去筛魔法物品，闪长岩 花岗岩 安山岩与圆石可锤成沙砾。
     event.remove({ id: 'exdeorum:cobblestone' })
 
     event.shaped(
